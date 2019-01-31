@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>LS건설|김하늘</title>
+	
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/jquery.bxslider.css"> 
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="main.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/jquery.bxslider.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</head>
+<style>
+
+</style>
+ <script>
+	$(function(){
+		var mySlider = $('.topSlider').bxSlider({
+			auto:true,
+			controls:false,
+			mode:'fade',
+			duration:700,
+			pagerCustom:'.bx-pager'
+			});
+			$('#prevBtn').on('click',function(){
+				mySlider.goToPrevSlide();
+			});
+			$('#nextBtn').on('click',function(){
+				mySlider.goToNextSlide();
+			});
+
+		var $menu = $("#header");
+		// var $menu = $(this)
+		var $menuPos = $menu.offset().top;
+
+		$(window).on("scroll",function(){
+			var scrollY = window.pageYOffset;
+			console.log(scrollY);
+			if (scrollY > $menuPos) {
+				$("#header").addClass("fixed fadeInDown animated");
+				// $("#header .navbar-brand").addClass("fixed")
+			}else{
+				$("#header").removeClass("fixed fadeInDown animated");
+				// $("#header .navbar-brand").removeClass("fixed")
+			}
+		});	
+	});
+</script> 
+<body>
+	<div id="header-wrap">
+		<div class="container-fluid">
+			<div id="m_topSlider">
+				<ul class="topSlider">
+					<li>
+						<div class="img-wrap"><img src="images/mainS_bg1.jpg" alt="슬라이드1"></div>
+						<p class="m_txt text-white">LS,<br>세계의 미래를 연결합니다</p>
+						<a href="#"></a>
+					</li>
+					<li>
+						<div class="img-wrap"><img src="images/mainS_bg3.jpg" alt="슬라이드2"></div>
+						<p class="m_txt text-white">LS,<br>첨단소재(銅, Copper)로<br>미래를 준비합니다</p>
+						<a href="#"></a>
+					</li>
+					<li>
+						<div class="img-wrap"><img src="images/mainS_bg2.jpg" alt="슬라이드3"></div>
+						<p class="m_txt text-white">LS,<br>LS, 세계의 미래를<br>스마트에너지로 관리합니다</p>
+						<a href="#"></a>
+					</li>
+				</ul>
+				<div id="prevBtn"><a href="#"></a></div>
+				<div id="nextBtn"><a href="#"></a></div>
+				<div class="m_quickMenu">
+					<ul class="card bg-transparent">
+						<li class="clearfix card-body">
+							<div class="q_txt-wrap">
+								<h3 class="card-title text-white">사업분야</h3>
+								<p class="card-text">사업영역, 미래가치,<br>계열사 정보 등을<br>확인하실 수 있습니다.</p>
+							</div>
+							<div class="q_img-wrap">
+								<p class="m_quick"><img src="images/m_quickicon.png" alt="회사아이콘"></p>
+								<i class="fas fa-chevron-circle-right"></i>
+							</div>
+						</li>
+						<li class="clearfix card-body">
+							<div class="q_txt-wrap">
+								<h3 class="card-title text-white">투자정보</h3>
+								<p class="card-text">경영실적, 재무정보,<br> 결산공고 등을<br>확인하실 수 있습니다.</p>
+							</div>
+							<div class="q_img-wrap">
+								<p class="m_quick"><img src="images/m_quickicon2.png" alt="회사아이콘"></p>
+								<i class="fas fa-chevron-circle-right"></i>
+							</div>
+						</li>
+						<li class="clearfix card-body">
+							<div class="q_txt-wrap">
+								<h3 class="card-title text-white">채용안내</h3>
+								<p class="card-text">채용공고, 채용절차,<br> 직무소개 등을<br>확인하실 수 있습니다.</p>
+							</div>
+							<div class="q_img-wrap">
+								<p class="m_quick-"><img src="images/m_quickicon3.png" alt="회사아이콘"></p>
+								<i class="fas fa-chevron-circle-right"></i>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<header id="header">
+			<div class="container">
+				<nav class="navbar navbar-expand-sm bg-transparent">
+				  <div class="container">
+				  	<a class="h_logo" href="index.html"><img src="images/common/logo_1.png" alt="ls그룹 로고"></a>
+				  	<ul class="navbar-nav ml-auto">
+				  	  <li class="nav-item ">
+				  	    <a class="nav-link" href="#">LS소개</a>
+				  	    <ul class="sub">
+				  	    	<li><a href="#">경영철학</a></li>
+				  	    	<li><a href="#">주요 경영진</a></li>
+				  	    	<li><a href="#">글로벌 네트워크</a></li>
+				  	    	<li><a href="#">사업분야</a></li>
+				  	    	<li><a href="#">LS 역사</a></li>
+				  	    	<li><a href="#">투자정보</a></li>
+				  	    </ul>
+				  	  </li>
+				  	  <li class="nav-item ">
+				  	    <a class="nav-link" href="#">채용정보</a>
+				  	    <ul class="sub">
+				  	    	<li><a href="#">인재상</a></li>
+				  	    	<li><a href="#">인사제도</a></li>
+				  	    	<li><a href="#">채용안내</a></li>
+				  	    </ul>
+				  	  </li>
+				  	  <li class="nav-item ">
+				  	    <a class="nav-link" href="#">홍보센터</a>
+				  	    <ul class="sub">
+				  	    	<li><a href="#">보도자료</a></li>
+				  	    	<li><a href="#">소셜미디어</a></li>
+				  	    	<li><a href="#">광고</a></li>
+				  	    	<li><a href="#">CI</a></li>
+				  	    </ul>
+				  	  </li>
+				  	  <li class="nav-item ">
+				  	    <a class="nav-link" href="#">사회공헌</a>
+				  	    <ul class="sub">
+				  	    	<li><a href="#">LS사회공헌</a></li>
+				  	    	<li><a href="#">대학생 해외봉사단</a></li>
+				  	    	<li><a href="#">드림사이언스클래스</a></li>
+				  	    	<li><a href="#">대학생 기자단</a></li>
+				  	    	<li><a href="#">드림오케스트라</a></li>
+				  	    	<li><a href="#">LS 드림카</a></li>
+				  	    </ul>
+				  	  </li>
+				  	</ul>
+				  </div>
+				</nav>
+			</div>
+		</header>
+	</div>
+	<div id="contents-wrap">
+		<div class="container">
+			<div class="row mb-3">
+				<div class="col-sm-4 bg-primary">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+				<div class="col-sm-4 bg-primary">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+				<div class="col-sm-4 bg-primary">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 bg-primary">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+				<div class="col-sm-4 bg-primary">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+				<div class="col-sm-4 bg-primary">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 bg-primary">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+				<div class="col-sm-4 bg-primary">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+				<div class="col-sm-4 bg-primary">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

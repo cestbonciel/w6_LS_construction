@@ -1,0 +1,43 @@
+@charset 'utf-8';
+@import url(reset.css);
+#header-wrap{position: relative;height: 860px;}
+.container-fluid{position:absolute;height: 860px;overflow: hidden;}
+.clearfix:after{content:"";display: block;clear: both;}
+
+#header .navbar a.h_logo{width: 71px;height: 32px;display: block;background:url(../images/common/logo_1.png) 0 0 no-repeat;}
+#header{position:fixed;width: 100%;border-bottom: 1px solid #f00;}
+.navbar-nav li a{color: #fff;}
+/*#header a.navbar-brand{background:url(../images/common/logo_1.png) 0 0 no-repeat;}*/
+.sub{display: none;}
+
+#header.fixed{background: #fff;}
+#header.fixed .navbar-nav li a{color: #0d2746;}
+#header.fixed .navbar a.h_logo{background:url(../images/common/hover_logo_2.png) 0 0 no-repeat;}
+/*#header .navbar-brand.fixed img{display: none;background:url(../images/common/hover_logo_2.png) 0 0 no-repeat;}*/
+
+/*slide*/
+	.topSlider{position: relative;}
+	.topSlider .m_txt{font-size: 48px;font-weight: bold;position: absolute;top: 170px;right: 350px;text-align: right;text-shadow:3px -2px 8px #000;}
+
+	#prevBtn,#nextBtn{position: absolute;top: 41%;width: 25px;height: 47px;_transform:translateY(-50%);cursor:pointer;}
+	#prevBtn{left:250px;}
+	#nextBtn{right:250px;}
+	#prevBtn{width: 25px;height: 47px;display: block;background:url(../images/common/prev.png);}
+	#nextBtn{width: 25px;height: 47px;display: block;background:url(../images/common/next.png);}
+
+	.bx-wrapper {box-shadow: none;border: none;background: none;postion:none;margin-bottom: 0;}
+
+.navbar-nav>li{font-size: 18px;}
+.m_quickMenu{position: absolute;top: 170px;left: 315px;width: 315px;height: 470px;_background-color: #0d2746;background:url(../images/m_quickBox.png);}
+.m_quickMenu>ul{}
+.card-body{/*width: 236px;height: 120px;*/}
+.card-body:nth-child(3) .q_img-wrap{width: 59px;height: 89px;} 
+.card-text{color: #778493;font-size: 15px;}
+.q_txt-wrap{float: left;}
+.q_txt-wrap h3{padding-bottom: 10px;}
+.q_img-wrap{float: right;}
+.fas{color: #fff;}
+.fas:hover{color: #ed164b;}
+
+/*content*/
+/*#contents-wrap{min-height:2000px;position:;}*/
