@@ -1,6 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
+<html lang="ko"><head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>LS건설|김하늘</title>
@@ -9,15 +7,14 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/jquery.bxslider.css"> 
 	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<script src="main.js"></script>
+	<!-- <script src="main.js"></script> -->
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery.bxslider.js"></script>
 	<script src="js/bootstrap.min.js"></script>
-</head>
 <style>
 
 </style>
- <script>
+<script>
 	$(function(){
 		var mySlider = $('.topSlider').bxSlider({
 			auto:true,
@@ -49,7 +46,9 @@
 			}
 		});	
 	});
-</script> 
+</script></head>
+
+  
 <body>
 	<div id="header-wrap">
 		<div class="container-fluid">
@@ -57,7 +56,7 @@
 				<ul class="topSlider">
 					<li>
 						<div class="img-wrap"><img src="images/mainS_bg1.jpg" alt="슬라이드1"></div>
-						<p class="m_txt text-white">LS,<br>세계의 미래를 연결합니다</p>
+						<p class="m_txt text-white">GREATER VALUE TOGETHER!</p>
 						<a href="#"></a>
 					</li>
 					<li>
@@ -75,7 +74,7 @@
 				<div id="nextBtn"><a href="#"></a></div>
 				<div class="m_quickMenu">
 					<ul class="card bg-transparent">
-						<li class="clearfix card-body">
+						<li class="clearfix card-body q_list">
 							<div class="q_txt-wrap">
 								<h3 class="card-title text-white">사업분야</h3>
 								<p class="card-text">사업영역, 미래가치,<br>계열사 정보 등을<br>확인하실 수 있습니다.</p>
@@ -85,7 +84,7 @@
 								<i class="fas fa-chevron-circle-right"></i>
 							</div>
 						</li>
-						<li class="clearfix card-body">
+						<li class="clearfix card-body q_list">
 							<div class="q_txt-wrap">
 								<h3 class="card-title text-white">투자정보</h3>
 								<p class="card-text">경영실적, 재무정보,<br> 결산공고 등을<br>확인하실 수 있습니다.</p>
@@ -95,7 +94,7 @@
 								<i class="fas fa-chevron-circle-right"></i>
 							</div>
 						</li>
-						<li class="clearfix card-body">
+						<li class="clearfix card-body q_list">
 							<div class="q_txt-wrap">
 								<h3 class="card-title text-white">채용안내</h3>
 								<p class="card-text">채용공고, 채용절차,<br> 직무소개 등을<br>확인하실 수 있습니다.</p>
@@ -109,13 +108,14 @@
 				</div>
 			</div>
 		</div>
-		<header id="header">
+		<header id="header" class="">
 			<div class="container">
 				<nav class="navbar navbar-expand-sm bg-transparent">
 				  <div class="container">
-				  	<a class="h_logo" href="index.html"><img src="images/common/logo_1.png" alt="ls그룹 로고"></a>
-				  	<ul class="navbar-nav ml-auto">
-				  	  <li class="nav-item ">
+				  	<a class="h_logo" href="index.html"></a>
+				  	<ul class="navbar-nav mr-auto ml-auto">
+				  	  <h2 class="blind">메인메뉴</h2>
+				  	  <li class="nav-item pr-5">
 				  	    <a class="nav-link" href="#">LS소개</a>
 				  	    <ul class="sub">
 				  	    	<li><a href="#">경영철학</a></li>
@@ -126,7 +126,7 @@
 				  	    	<li><a href="#">투자정보</a></li>
 				  	    </ul>
 				  	  </li>
-				  	  <li class="nav-item ">
+				  	  <li class="nav-item pr-5">
 				  	    <a class="nav-link" href="#">채용정보</a>
 				  	    <ul class="sub">
 				  	    	<li><a href="#">인재상</a></li>
@@ -134,7 +134,7 @@
 				  	    	<li><a href="#">채용안내</a></li>
 				  	    </ul>
 				  	  </li>
-				  	  <li class="nav-item ">
+				  	  <li class="nav-item pr-5">
 				  	    <a class="nav-link" href="#">홍보센터</a>
 				  	    <ul class="sub">
 				  	    	<li><a href="#">보도자료</a></li>
@@ -162,18 +162,40 @@
 	</div>
 	<div id="contents-wrap">
 		<div class="container">
-			<div class="row mb-3">
-				<div class="col-sm-4 bg-primary">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+			<div class="row con1-tit mr-0 ml-0" style="height:140px;">
+				<h3>LS 소개</h3>
+			</div>
+			<div class="row mb-3 con1-wrap mr-0 ml-0" style="max-height:565px;">
+				<div class="col-sm-3 bg-primary">
+					<div class="card">
+					  <img class="card-img-top" src="images/mcon1_img01.jpg" alt="Card image">
+					  <div class="card-body card-primary">
+						    <h4 class="card-title">한성용</h4>
+						    <p class="card-text">ceo</p>
+						    <a href="#" class="btn btn-primary">See Profile
+						    </a>
+					  </div>
+					</div>
 				</div>
-				<div class="col-sm-4 bg-primary">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				<div class="col-sm-3 bg-primary ">
+					<div class="card">
+					  <img class="card-img-top" src="images/mcon1_img02.jpg" alt="Card image">
+					  <div class="card-body card-primary">
+						    <h4 class="card-title">한성용</h4>
+						    <p class="card-text">ceo</p>
+						    <a href="#" class="btn btn-primary">See Profile
+						    </a>
+					  </div>
+					</div>
 				</div>
-				<div class="col-sm-4 bg-primary">
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				<div class="col-sm-3 bg-primary">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
+				</div>
+				<div class="col-sm-3 bg-primary">
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
 				</div>
 			</div>
-			<div class="row">
+			<div class="row mb-3">
 				<div class="col-sm-4 bg-primary">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus, consequuntur.
 				</div>
