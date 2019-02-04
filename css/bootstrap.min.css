@@ -13,3 +13,11 @@ body{font: 14px 'Noto Sans KR','Malgun Gothic',Arial,sans-serif;}
      margin-right: 0	; 
      margin-left: 0; 
 }
+
+.row{margin-left: 0;margin-right: 0;}
+
+.card{border-radius:none;border: none;}
+
+.card-img-top{border-radius:none !important;border-top-left-radius: 0 0 !important;;
+    border-top-right-radius: 0 0 !important;;
+}		
