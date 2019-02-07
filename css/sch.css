@@ -1,0 +1,49 @@
+
+
+.sch-wrap {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate3d(-50%, -50%, 0);
+  margin: -4px 0 0 8px;
+  width: 0;
+  border-bottom: 2px solid white;
+  height: 32px;
+  cursor: pointer;
+  transition: width 0.5s cubic-bezier(0.55, 0, 0.1, 1) 0.5s;
+}
+.sch-wrap.active {
+  width: 150px;
+}
+.sch-wrap.active i.material-icons {
+  right: -8px;
+}
+.sch-wrap.active svg circle {
+  stroke-dashoffset: -100;
+}
+.sch-wrap i.material-icons {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  position: absolute;
+  top: auto;
+  right: -13px;
+  bottom: -1px;
+  left: auto;
+  font-size: 20px;
+  transition: right .3s linear .7s;
+}
+.sch-wrap svg {
+  position: absolute;
+  top: auto;
+  right: -17px;
+  bottom: -3px;
+  left: auto;
+  transform: rotate(-270deg);
+}
+.sch-wrap svg circle {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 0;
+  transition: all 1s cubic-bezier(0.55, 0, 0.1, 1);
+}

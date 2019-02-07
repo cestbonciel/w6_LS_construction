@@ -2,13 +2,10 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>LS건설|김하늘</title>
-	
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/jquery.bxslider.css"> 
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/slick.css">
-	<link rel="stylesheet" href="css/slick-theme.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">	
 	<!-- <script src="main.js"></script> -->
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery.bxslider.js"></script>
@@ -31,6 +28,23 @@
 			$('#nextBtn').on('click',function(){
 				mySlider.goToNextSlide();
 			});
+		var fbanner = $(".fami-sbanner").bxSlider({
+			auto:true,
+			controls:false,
+			slideWidth:960,
+			slideMargin:50,
+			pager:false,
+			minSlides:5,
+			maxSlides:5,
+			moveSlides:2,
+			autoHover:true
+		});
+		$(".left").on("click",function(){
+				mySlider.goToPrevSlide();
+			});
+			$(".right").on("click",function(){
+				mySlider.goToNextSlide();
+			});
 
 		var $menu = $("#header");
 		// var $menu = $(this)
@@ -42,11 +56,17 @@
 			if (scrollY > $menuPos) {
 				$("#header").addClass("fixed fadeInDown animated");
 				// $("#header .navbar-brand").addClass("fixed")
+				 $(".sch-icon").attr("src","images/common/h_sch-icon.png")
 			}else{
 				$("#header").removeClass("fixed fadeInDown animated");
-				// $("#header .navbar-brand").removeClass("fixed")
+				$(".sch-icon").attr("src","images/common/sch-icon.png")
 			}
 		});	
+
+		$("#btn").click(function(){
+					$("html,body").animate({scrollTop:0},500);
+				});
+
 	});
 </script></head>
 
@@ -115,49 +135,62 @@
 				<nav class="navbar navbar-expand-sm bg-transparent">
 				  <div class="container">
 				  	<a class="h_logo" href="index.html"></a>
-				  	<ul class="navbar-nav mr-auto ml-auto">
-				  	  <h2 class="blind">메인메뉴</h2>
-				  	  <li class="nav-item pr-5">
-				  	    <a class="nav-link" href="#">LS소개</a>
-				  	    <ul class="sub">
-				  	    	<li><a href="#">경영철학</a></li>
-				  	    	<li><a href="#">주요 경영진</a></li>
-				  	    	<li><a href="#">글로벌 네트워크</a></li>
-				  	    	<li><a href="#">사업분야</a></li>
-				  	    	<li><a href="#">LS 역사</a></li>
-				  	    	<li><a href="#">투자정보</a></li>
-				  	    </ul>
-				  	  </li>
-				  	  <li class="nav-item pr-5">
-				  	    <a class="nav-link" href="#">채용정보</a>
-				  	    <ul class="sub">
-				  	    	<li><a href="#">인재상</a></li>
-				  	    	<li><a href="#">인사제도</a></li>
-				  	    	<li><a href="#">채용안내</a></li>
-				  	    </ul>
-				  	  </li>
-				  	  <li class="nav-item pr-5">
-				  	    <a class="nav-link" href="#">홍보센터</a>
-				  	    <ul class="sub">
-				  	    	<li><a href="#">보도자료</a></li>
-				  	    	<li><a href="#">소셜미디어</a></li>
-				  	    	<li><a href="#">광고</a></li>
-				  	    	<li><a href="#">CI</a></li>
-				  	    </ul>
-				  	  </li>
-				  	  <li class="nav-item ">
-				  	    <a class="nav-link" href="#">사회공헌</a>
-				  	    <ul class="sub">
-				  	    	<li><a href="#">LS사회공헌</a></li>
-				  	    	<li><a href="#">대학생 해외봉사단</a></li>
-				  	    	<li><a href="#">드림사이언스클래스</a></li>
-				  	    	<li><a href="#">대학생 기자단</a></li>
-				  	    	<li><a href="#">드림오케스트라</a></li>
-				  	    	<li><a href="#">LS 드림카</a></li>
-				  	    </ul>
-				  	  </li>
-				  	</ul>
+				  	<button class="navbar-toggler d-none d-sm-block" type="button" data-toggle="collapse" data-target="#tmenu">
+						<!-- <span class="navbar-toggler-icon"></span> -->
+						<i class="fas fa-bars"></i>
+					</button>
+				  	<div class="collapse navbar-collapse" id="tmenu">
+				  		<ul class="navbar-nav mr-auto ml-auto">
+				  		  <h2 class="blind">메인메뉴</h2>
+				  		  <li class="nav-item pr-5">
+				  		    <a class="nav-link" href="#">LS소개</a>
+				  		    <ul class="sub">
+				  		    	<li><a href="#">경영철학</a></li>
+				  		    	<li><a href="#">주요 경영진</a></li>
+				  		    	<li><a href="#">글로벌 네트워크</a></li>
+				  		    	<li><a href="#">사업분야</a></li>
+				  		    	<li><a href="#">LS 역사</a></li>
+				  		    	<li><a href="#">투자정보</a></li>
+				  		    </ul>
+				  		  </li>
+				  		  <li class="nav-item pr-5">
+				  		    <a class="nav-link" href="#">채용정보</a>
+				  		    <ul class="sub">
+				  		    	<li><a href="#">인재상</a></li>
+				  		    	<li><a href="#">인사제도</a></li>
+				  		    	<li><a href="#">채용안내</a></li>
+				  		    </ul>
+				  		  </li>
+				  		  <li class="nav-item pr-5">
+				  		    <a class="nav-link" href="#">홍보센터</a>
+				  		    <ul class="sub">
+				  		    	<li><a href="#">보도자료</a></li>
+				  		    	<li><a href="#">소셜미디어</a></li>
+				  		    	<li><a href="#">광고</a></li>
+				  		    	<li><a href="#">CI</a></li>
+				  		    </ul>
+				  		  </li>
+				  		  <li class="nav-item ">
+				  		    <a class="nav-link" href="#">사회공헌</a>
+				  		    <ul class="sub">
+				  		    	<li><a href="#">LS사회공헌</a></li>
+				  		    	<li><a href="#">대학생 해외봉사단</a></li>
+				  		    	<li><a href="#">드림사이언스클래스</a></li>
+				  		    	<li><a href="#">대학생 기자단</a></li>
+				  		    	<li><a href="#">드림오케스트라</a></li>
+				  		    	<li><a href="#">LS 드림카</a></li>
+				  		    </ul>
+				  		  </li>
+				  		</ul>
+				  	</div>
 				  </div>
+				<div class="sch-wrap d-sm-none">
+					<div class="sch">
+						<input type="text" name="search" id="search">
+						<input class="sch-icon" type="image" src="images/common/sch-icon.png" alt="검색아이콘">
+						
+					</div>
+				</div>
 				</nav>
 			</div>
 		</header>
@@ -225,29 +258,29 @@
 										LS는 개발도상국 아동들의 교육환경 개선과 다양한 문화.정서 교육을 위해<br>
 										2007년부터 매년 2회식 대학생 봉사단을 해외에 파견해 오고 있습니다.
 									</p>
-									<a class="btn btn-primary mr-3" href="javascript:void(0)">해외봉사단 신청</a>
+									<a class="btn btn-light mr-3" href="javascript:void(0)">해외봉사단 신청</a>
 								</div>
 							</div>
 						</div>
 						<div class="col-md-6 bg-danger">		
-							<div class="row">
+							<div class="row con2-rcol">
 								<div class="col-sm-6">
 									<div class="card">
-										<img class="card-img-top" src="images/con2img.jpg" alt="Card image">
+										<img class="card-img-top" src="images/s3_img02.jpg" alt="Card image">
 										<div class="card-body">
-										   <h4 class="card-title">한성용</h4>
+										   <h4 class="card-title">주요 활동 소개</h4>
 										   <p class="card-text">Some example text.</p>
-										   <a href="#" class="btn btn-primary">See Profile</a>
+										   <a href="#" class="btn btn-primary">더보기</a>
 										</div>
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="card">
-										<img class="card-img-top" src="images/con2img.jpg" alt="Card image">
+										<img class="card-img-top" src="images/s3_img03.jpg" alt="Card image">
 										<div class="card-body">
-										    <h4 class="card-title">한성용</h4>
+										    <h4 class="card-title">활동 모습</h4>
 									        <p class="card-text">Some example text.</p>
-										    <a href="#" class="btn btn-primary">See Profile</a>
+										    <a href="#" class="btn btn-primary">더보기</a>
 										</div>
 									</div>
 								</div>
@@ -258,7 +291,7 @@
 		</div>	
 		<div class="container" style="width:1200px !important;">
 			<div class="row con1-tit mr-auto ml-auto" style="height:140px;"><h3>LS 소식</h3></div>
-			<div class="row con3-wrap" style="width:1200px !important;height: 432px;">
+			<div class="row con3-wrap ml-auto mr-auto" style="width:1200px !important;height: 432px;">
 				<div class="col-sm-4 bg-secondary">
 					<div class="row bg-warning" style="width: 370px;height: 50%;">
 						<div class="card bg-secondary">
@@ -309,34 +342,38 @@
 		</div>
 	</div>
 	<div id="footer-wrap">
-		<div class="fbanner-wrap clearfix">
-			<div class="container" style="width:1194px !important;">
-				<div class="left">
-					<img src="images/common/prev.png" alt="이전">
+		<div class="fbanner-wrap p-5">
+			<div class="container">	
+				<div class="row" id="footer_banner">
+					<div class="col-sm-2">
+						<h4 class="b_title">Family Site</h4>
+					</div>
+					<div class="col-sm-10 sb">
+						<div class="b-inner">
+							<ul class="fami-sbanner">
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo1.png" alt="패밀리사이트1"></a></li>
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo2.png" alt="패밀리사이트2"></a></li>
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo3.png" alt="패밀리사이트3"></a></li>
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo4.png" alt="패밀리사이트4"></a></li>
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo5.png" alt="패밀리사이트5"></a></li>
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo6.png" alt="패밀리사이트6"></a></li>
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo7.png" alt="패밀리사이트7"></a></li>
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo8.png" alt="패밀리사이트8"></a></li>
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo9.png" alt="패밀리사이트9"></a></li>
+								<li><a href="javascript:void(0)"><img src="images/common/familysite_logo10.png" alt="패밀리사이트10"></a></li>
+							</ul>
+						</div>
+						<div class="left">	
+						</div> 
+						<div class="right">
+					</div>
 				</div>
-				<div class="b-inner">
-					<ul class="fami-sbanner">
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo1.png" alt="패밀리사이트1"></a></li>
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo2.png" alt="패밀리사이트2"></a></li>
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo3.png" alt="패밀리사이트3"></a></li>
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo4.png" alt="패밀리사이트4"></a></li>
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo5.png" alt="패밀리사이트5"></a></li>
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo6.png" alt="패밀리사이트6"></a></li>
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo7.png" alt="패밀리사이트7"></a></li>
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo8.png" alt="패밀리사이트8"></a></li>
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo9.png" alt="패밀리사이트9"></a></li>
-						<li class="fami-site"><a href="#"><img src="images/common/familysite_logo10.png" alt="패밀리사이트10"></a></li>
-					</ul>
-				</div>
-				<div class="right">
-					<img src="images/common/next.png" alt="다음">
-				</div>
+					
+				</div> 
 			</div>
 		</div>
-		<!--  <style>
-			.fbanner-wrap{background-color:#0A2745;height: 294px;}
-			.fami-sbanner{float: left;}
-		</style> -->
+
+		</style> 
 		<footer id="footer">
 			<div class="container clearfix">
 				<p class="footer-1"><a href="index.html"><img src="images/common/hover_logo_2.png" alt="로고"></a></p>
@@ -348,21 +385,11 @@
 						<li><a href="javascript:void(0)">Contact Us</a></li>
 					</ul>
 					<p>(주)LS 서울특별시 용산구 한강대로 92 LS용산타워 17~18층 대표자 이광우<br>Tel  02-2189-9782 Fax  02-2189-9799 사업자등록번호  116-81-19007<br><small>COPYRIGHT &copy;LS Corp. ALL RIGHTS RESERVED</small></p>
+					<button id="btn"><span>TOP</span></button>
 				</div>
 			</div>
 		</footer>
 	</div>
-	<!-- <script>
-		$(function(){
-			$('.fami-sbanner').slick({
-				infinite: true,
-				slidesToShow: 5,
-				slidesToScroll: 5
-      		});
-		});
-	</script>
-	 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-	 <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
-	 <script type="text/javascript" src="js/slick.min.js"></script>  -->
+
 </body>
 </html>
