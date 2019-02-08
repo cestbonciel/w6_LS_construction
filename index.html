@@ -49,18 +49,9 @@
 		var $menu = $("#header");
 		// var $menu = $(this)
 		var $menuPos = $menu.offset().top;
-
+       setTimeout(function(){menuMove()},1);
 		$(window).on("scroll",function(){
-			var scrollY = window.pageYOffset;
-			console.log(scrollY);
-			if (scrollY > $menuPos) {
-				$("#header").addClass("fixed fadeInDown animated");
-				// $("#header .navbar-brand").addClass("fixed")
-				 $(".sch-icon").attr("src","images/common/h_sch-icon.png")
-			}else{
-				$("#header").removeClass("fixed fadeInDown animated");
-				$(".sch-icon").attr("src","images/common/sch-icon.png")
-			}
+			menuMove();
 		});	
 
 		$("#btn").click(function(){
@@ -68,6 +59,23 @@
 				});
 
 	});
+
+
+	function menuMove(){
+		$menu = $("#header");
+		// var $menu = $(this)
+		$menuPos = $menu.offset().top;
+		var scrollY = window.pageYOffset;
+			console.log($menuPos);
+			if (scrollY > 0) {
+				$("#header").addClass("fixed fadeInDown animated");
+				// $("#header .navbar-brand").addClass("fixed")
+				 $(".sch-icon").attr("src","images/common/h_sch-icon.png")
+			}else{
+				$("#header").removeClass("fixed fadeInDown animated");
+				$(".sch-icon").attr("src","images/common/sch-icon.png")
+			}
+	}
 </script></head>
 
   
@@ -131,7 +139,6 @@
 			</div>
 		</div>
 		<header id="header" class="">
-			<div class="bd-line"></div>
 			<div class="container">
 				<nav class="navbar navbar-expand-sm bg-transparent">
 				  <div class="container">

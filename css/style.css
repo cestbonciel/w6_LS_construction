@@ -16,14 +16,14 @@
 
     #header .navbar a.h_logo{width: 71px;height: 32px;display:
 		block;background:url(../images/common/logo_1.png) 0 0 no-repeat;position: absolute;top: 21px;left: -7px;}
-	#header{position:fixed;width: 100%;z-index:100;border-bottom: 1px solid #f00;_padding-bottom: 20px;}
+	#header{width: 100%;z-index:100;border-bottom: 1px solid #f00;_padding-bottom: 20px;}
 	/*#header>.bd-line{position: relative;top: 100px;}*/
 	nav ul.navbar-nav>li>a{font-weight:500;color: #fff;padding: 29px 0;}     /*#header a
 	.navbar-brand{background:url(../images/common/logo_1.png) 0 0 no-repeat;}*/
 	ul.sub{display: block;}
 	ul.sub>li>a{display: inline-block;font-size: 16px;color: #fff;font-weight: 400;text-decoration: none;padding-bottom: 10px;}
 
-	#header.fixed{background: #fff;border-bottom: none;box-shadow:-4px 3px 19px #778493;}
+	#header.fixed{position:fixed;background: #fff;border-bottom: none;box-shadow:-4px 3px 19px #778493;}
 	#header.fixed .navbar-nav li a{color: #0d2746;}
 	#header.fixed .navbar a.h_logo{background:url(../images/common/hover_logo_2.png) 0 0 no-repeat;}
 	/*#header .navbar-brand.fixed img{display: none;background:url(../images/common/hover_logo_2.png) 0 0 no-repeat;}*/
