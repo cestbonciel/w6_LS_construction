@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">	
 	<!-- <script src="main.js"></script> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery.bxslider.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -19,12 +20,66 @@
 		$("#header nav.navi-sct").hover(function(){
 				$(".sub").stop().slideDown();
 				// $(".bg-menu-open").stop().slideDown();
-				$(".gnb_wrap").addClass("h_active")
+				// $(".gnb_wrap").addClass("h_active");
+				$(".gnb_wrap").css({
+					"position":"relative",
+					"z-index":100,
+					"backgroundColor":"#fff"
+				});
+				$("nav ul.navbar-nav>li>a").css({"color": "#0d2746"});
+				$("ul.sub>li>a").css({"color": "#0d2746"});
+				$(".sch-icon").attr("src","images/common/h_sch-icon.png");
+				$("#header .navbar a.h_logo").css({
+					"background":"url(images/common/hover_logo_2.png)"
+				});
+				$(".sch-wrap .sch input[type='text']").css({
+					"border":"none",
+					"border-bottom": "1px solid #0d2746",
+					"color":"none",
+					"background":"none"
+				});
+				
 			},function(){
 				$(".sub").hide();
 				// $(".bg-menu-open").hide();
+				// $(".gnb_wrap").removeClass("h_active")
+				$(".gnb_wrap").css({
+					"background":"none"
+				});
+				$("nav ul.navbar-nav>li>a").css({"color": "#fff"});
+				$("ul.sub>li>a").css({"color": "#fff"});
+				$(".sch-icon").attr("src","images/common/sch-icon.png");
+				$("#header .navbar a.h_logo").css({
+					"background":"url(images/common/logo_1.png)"
+				});
+				$(".sch-wrap .sch input[type='text']").css({
+					"border":"none",
+					"border-bottom": "1px solid #fff",
+					"color":"none",
+					"background":"none"
+				});
+			
 			});
 
+		$("#scroll-header nav.navi-sct").hover(function(){
+				$(".scroll-sub").stop().slideDown();
+				$(".scroll-gnb-wrap").css({
+					"position":"relative",
+					"z-index":100,
+					"backgroundColor":"#fff"
+				});
+				$(".sch-icon").attr("src","images/common/h_sch-icon.png");
+				
+				
+			},function(){
+				$(".scroll-sub").hide();
+				$(".scroll-gnb-wrap").css({
+					"background":"none"
+				});
+				$(".sch-icon").attr("src","images/common/sch-icon.png");
+			
+			});
+	//slide
 		var mySlider = $('.topSlider').bxSlider({
 			auto:true,
 			controls:false,
@@ -77,15 +132,34 @@
 		$menuPos = $menu.offset().top;
 		var scrollY = window.pageYOffset;
 			console.log($menuPos);
+			// $(".gnb_wrap").hide();
+			// $(".scroll-gnb-wrap").show();
 			if (scrollY > 0) {
-				$("#header").addClass("fixed fadeInDown animated");
-				 $(".sch-icon").attr("src","images/common/h_sch-icon.png")
+				$(".gnb_wrap").hide();
+				$(".scroll-gnb-wrap").show();
+				$(".sch-icon").attr("src","images/common/h_sch-icon.png");
+				$("#header").addClass("fadeInDown animated");
+				 $("#scroll-header").addClass("fadeInDown animated");
+				$("#header").css({"z-index":"100"});
+				$("#scroll-header").css({"z-index":"100"});
+
+				
+				// $("nav ul.navbar-nav>li>a").css({"color": "#0d2746"});
+				// $("ul.sub>li>a").css({"color": "#0d2746"});
 			}else{
-				$("#header").removeClass("fixed fadeInDown animated");
-				$(".sch-icon").attr("src","images/common/sch-icon.png")
-			}
+				$(".scroll-gnb-wrap").hide();
+				$(".gnb_wrap").show();
+				$(".sch-icon").attr("src","images/common/sch-icon.png");
+				$("#header").removeClass("fadeInDown animated");
+				$("#scroll-header").removeClass("fadeInDown animated");
+				
+				// $("nav ul.navbar-nav>li>a").css({"color": "#fff"});
+				// $("ul.sub>li>a").css({"color": "#fff"});
+				// $("ul.scroll-sub>li>a").css({"color": "#fff"});
+			};
 	}
-</script></head>
+</script>
+</head>
 
   
 <body>
@@ -150,60 +224,130 @@
 		<div class="gnb_wrap">
 			<header id="header" class="">
 				<div class="container">
-					<nav class="navi-sct navbar navbar-expand-sm bg-transparent">
+					<nav class="navi-sct navbar navbar-expand-md bg-transparent">
 					  <div class="container">
 					  	<a class="h_logo" href="index.html"></a>
-					  	<!-- <button class="navbar-toggler d-none d-sm-block" type="button" data-toggle="collapse" data-target="#tmenu">
+					  <!-- 	<button class="navbar-toggler d-none d-sm-block ml-auto" type="button" data-toggle="collapse" data-target="#lsmenu">
 							<span class="navbar-toggler-icon"></span> 
-							<i class="fas fa-bars"></i> </button>-->
-					  		<ul class="ls-gnb-menu navbar-nav mr-auto ml-auto">
-					  		  <h2 class="blind">메인메뉴</h2>
-					  		  <li class="nav-item pr-5">
-					  		    <a class="nav-link" href="#">LS소개</a>
-					  		    <ul class="sub">
-					  		    	<li><a href="#">경영철학</a></li>
-					  		    	<li><a href="#">주요 경영진</a></li>
-					  		    	<li><a href="#">글로벌 네트워크</a></li>
-					  		    	<li><a href="#">사업분야</a></li>
-					  		    	<li><a href="#">LS 역사</a></li>
-					  		    	<li><a href="#">투자정보</a></li>
-					  		    </ul>
-					  		  </li>
-					  		  <li class="nav-item pr-5">
-					  		    <a class="nav-link" href="#">채용정보</a>
-					  		    <ul class="sub">
-					  		    	<li><a href="#">인재상</a></li>
-					  		    	<li><a href="#">인사제도</a></li>
-					  		    	<li><a href="#">채용안내</a></li>
-					  		    </ul>
-					  		  </li>
-					  		  <li class="nav-item pr-5">
-					  		    <a class="nav-link" href="#">홍보센터</a>
-					  		    <ul class="sub">
-					  		    	<li><a href="#">보도자료</a></li>
-					  		    	<li><a href="#">소셜미디어</a></li>
-					  		    	<li><a href="#">광고</a></li>
-					  		    	<li><a href="#">CI</a></li>
-					  		    </ul>
-					  		  </li>
-					  		  <li class="nav-item ">
-					  		    <a class="nav-link" href="#">사회공헌</a>
-					  		    <ul class="sub">
-					  		    	<li><a href="#">LS사회공헌</a></li>
-					  		    	<li><a href="#">대학생 해외봉사단</a></li>
-					  		    	<li><a href="#">드림사이언스클래스</a></li>
-					  		    	<li><a href="#">대학생 기자단</a></li>
-					  		    	<li><a href="#">드림오케스트라</a></li>
-					  		    	<li><a href="#">LS 드림카</a></li>
-					  		    </ul>
-					  		  </li>
-					  		</ul>
+							<i class="fas fa-bars"></i> </button> -->
+
+					  		<div class="collapse navbar-collapse" id="lsmenu">
+					  			<ul class="ls-gnb-menu navbar-nav mr-auto ml-auto">
+					  			  <h2 class="blind">메인메뉴</h2>
+					  			  <li class="nav-item pr-5">
+					  			    <a class="nav-link" href="#">LS소개</a>
+					  			    <ul class="sub">
+					  			    	<li><a href="#">경영철학</a></li>
+					  			    	<li><a href="#">주요 경영진</a></li>
+					  			    	<li><a href="#">글로벌 네트워크</a></li>
+					  			    	<li><a href="#">사업분야</a></li>
+					  			    	<li><a href="#">LS 역사</a></li>
+					  			    	<li><a href="#">투자정보</a></li>
+					  			    </ul>
+					  			  </li>
+					  			  <li class="nav-item pr-5">
+					  			    <a class="nav-link" href="#">채용정보</a>
+					  			    <ul class="sub">
+					  			    	<li><a href="#">인재상</a></li>
+					  			    	<li><a href="#">인사제도</a></li>
+					  			    	<li><a href="#">채용안내</a></li>
+					  			    </ul>
+					  			  </li>
+					  			  <li class="nav-item pr-5">
+					  			    <a class="nav-link" href="#">홍보센터</a>
+					  			    <ul class="sub">
+					  			    	<li><a href="#">보도자료</a></li>
+					  			    	<li><a href="#">소셜미디어</a></li>
+					  			    	<li><a href="#">광고</a></li>
+					  			    	<li><a href="#">CI</a></li>
+					  			    </ul>
+					  			  </li>
+					  			  <li class="nav-item ">
+					  			    <a class="nav-link" href="#">사회공헌</a>
+					  			    <ul class="sub">
+					  			    	<li><a href="#">LS사회공헌</a></li>
+					  			    	<li><a href="#">대학생 해외봉사단</a></li>
+					  			    	<li><a href="#">드림사이언스클래스</a></li>
+					  			    	<li><a href="#">대학생 기자단</a></li>
+					  			    	<li><a href="#">드림오케스트라</a></li>
+					  			    	<li><a href="#">LS 드림카</a></li>
+					  			    </ul>
+					  			  </li>
+					  			</ul>
+					  		</div>
 					  	
 					  </div>
 						<div class="sch-wrap d-none d-lg-block">
 							<div class="sch">
 								<input type="text" name="search" id="search">
 								<input class="sch-icon" type="image" src="images/common/sch-icon.png" alt="검색아이콘">
+								
+							</div>
+						</div>
+					</nav>
+				</div>
+			</header>
+		</div>
+		<div class="scroll-gnb-wrap">
+			<header id="scroll-header" class="">
+				<div class="container">
+					<nav class="scr_navi-sct navbar navbar-expand-md bg-transparent">
+					  <div class="container">
+					  	<a class="h_logo" href="index.html"></a>
+					  <!-- 	<button class="navbar-toggler d-none d-sm-block ml-auto" type="button" data-toggle="collapse" data-target="#lsmenu">
+							<span class="navbar-toggler-icon"></span> 
+							<i class="fas fa-bars"></i> </button> -->
+
+					  		<div class="collapse navbar-collapse" id="lsmenu">
+					  			<ul class="ls-gnb-menu navbar-nav mr-auto ml-auto">
+					  			  <h2 class="blind">메인메뉴</h2>
+					  			  <li class="nav-item pr-5">
+					  			    <a class="nav-link" href="#">LS소개</a>
+					  			    <ul class="scroll-sub">
+					  			    	<li><a href="#">경영철학</a></li>
+					  			    	<li><a href="#">주요 경영진</a></li>
+					  			    	<li><a href="#">글로벌 네트워크</a></li>
+					  			    	<li><a href="#">사업분야</a></li>
+					  			    	<li><a href="#">LS 역사</a></li>
+					  			    	<li><a href="#">투자정보</a></li>
+					  			    </ul>
+					  			  </li>
+					  			  <li class="nav-item pr-5">
+					  			    <a class="nav-link" href="#">채용정보</a>
+					  			    <ul class="scroll-sub">
+					  			    	<li><a href="#">인재상</a></li>
+					  			    	<li><a href="#">인사제도</a></li>
+					  			    	<li><a href="#">채용안내</a></li>
+					  			    </ul>
+					  			  </li>
+					  			  <li class="nav-item pr-5">
+					  			    <a class="nav-link" href="#">홍보센터</a>
+					  			    <ul class="scroll-sub">
+					  			    	<li><a href="#">보도자료</a></li>
+					  			    	<li><a href="#">소셜미디어</a></li>
+					  			    	<li><a href="#">광고</a></li>
+					  			    	<li><a href="#">CI</a></li>
+					  			    </ul>
+					  			  </li>
+					  			  <li class="nav-item ">
+					  			    <a class="nav-link" href="#">사회공헌</a>
+					  			    <ul class="scroll-sub">
+					  			    	<li><a href="#">LS사회공헌</a></li>
+					  			    	<li><a href="#">대학생 해외봉사단</a></li>
+					  			    	<li><a href="#">드림사이언스클래스</a></li>
+					  			    	<li><a href="#">대학생 기자단</a></li>
+					  			    	<li><a href="#">드림오케스트라</a></li>
+					  			    	<li><a href="#">LS 드림카</a></li>
+					  			    </ul>
+					  			  </li>
+					  			</ul>
+					  		</div>
+					  	
+					  </div>
+						<div class="sch-wrap d-none d-lg-block">
+							<div class="sch">
+								<input type="text" name="search" id="search">
+								<input class="sch-icon" type="image" src="images/common/h_sch-icon.png" alt="검색아이콘">
 								
 							</div>
 						</div>
@@ -266,7 +410,7 @@
 				<div class="container ml-auto mr-auto" style="width: 1200px !important;">
 					<div class="row con1-tit mr-0 ml-0" style="height:140px;"><h3>사회공헌 이야기</h3></div>
 					<div class="row con2-wrap " style="width:1200px !important;">
-						<div class="col-md-6 bg-light">
+						<div class="col-md-6">
 							<div class="con2-img-wrap">
 								<img src="images/s3_img01.jpg" alt="자원봉사">
 								<div class="txt-wrap clearfix">
@@ -286,7 +430,7 @@
 										<img class="card-img-top" src="images/s3_img02.jpg" alt="Card image">
 										<div class="card-body">
 										   <h4 class="card-title">주요 활동 소개</h4>
-										   <p class="card-text">Some example text.</p>
+										   <p class="card-text">교육봉사,노력봉사,문화교류,LS드림스쿨</p>
 										   <a href="#" class="btn btn-primary">더보기</a>
 										</div>
 									</div>
@@ -296,7 +440,7 @@
 										<img class="card-img-top" src="images/s3_img03.jpg" alt="Card image">
 										<div class="card-body">
 										    <h4 class="card-title">활동 모습</h4>
-									        <p class="card-text">Some example text.</p>
+									        <p class="card-text">해외봉사활동 모습</p>
 										    <a href="#" class="btn btn-primary">더보기</a>
 										</div>
 									</div>
@@ -309,17 +453,17 @@
 		<div class="container" style="width:1200px !important;">
 			<div class="row con1-tit mr-auto ml-auto" style="height:140px;"><h3>LS 소식</h3></div>
 			<div class="row con3-wrap ml-auto mr-auto" style="height: 432px;">
-				<div class="col-sm-4 bg-secondary">
-					<div class="row bg-warning" style="width: 370px;height: 50%;">
-						<div class="card bg-secondary">
+				<div class="col-sm-4">
+					<div class="row" style="width: 370px;height: 50%;">
+						<div class="card c01">
 						  <div class="card-body clearfix">
 							    <div class="card-title date"><strong>15</strong><br><span>Jan 2019</span></div>
 							    <p class="card-text">LS그룹, 사회복지공동모금회에 불우이웃돕기 성금 20억 기탁</p>
 						  </div>
 						</div>
 					</div>
-					<div class="row bg-info" style="height: 50%;">
-						<div class="card bg-info">
+					<div class="row" style="width: 370px;height: 50%;">
+						<div class="card c02">
 						  <div class="card-body clearfix">
 							    <div class="card-title date"><strong>23</strong><br><span>Jan 2019</span></div>
 							    <p class="card-text">구자균 회장 "미래 담보할 새로운 길 만드는 ‘경로 개척자’ 돼 달라" </p>
@@ -327,17 +471,17 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-sm-4 bg-success ">
-					<div class="row bg-danger" style="width: 370px;height: 50%;">
-						<div class="card bg-secondary">
+				<div class="col-sm-4">
+					<div class="row" style="width: 370px;height: 50%;">
+						<div class="card c03">
 						  <div class="card-body clearfix">
 							    <div class="card-title date"><strong>28</strong><br><span>Jan 2019</span></div>
-							    <p class="card-text">LS, 대학생해외봉사?과학캠프 등 미래세대 후원활동 지속</p>
+							    <p class="card-text">LS, 대학생해외봉사,과학캠프 등 미래세대 후원활동 지속</p>
 						  </div>
 						</div>
 					</div>
-					<div class="row bg-info" style="height: 50%;">
-						<div class="card bg-primary">
+					<div class="row" style="width: 370px;height: 50%;">
+						<div class="card c04">
 						  <div class="card-body clearfix">
 							    <div class="card-title date"><strong>29</strong><br><span>Jan 2019</span></div>
 							    <p class="card-text">LS산전, 역대 최대 연간 매출 2조4,850억 달성</p>

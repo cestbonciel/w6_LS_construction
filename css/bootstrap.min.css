@@ -23,3 +23,9 @@ body{font: 1em 'Noto Sans KR','Malgun Gothic',Arial,sans-serif;}
 }		
 .container{width: 1200px !important;}
 
+.card {
+
+     border: none; 
+     border-radius: 0; 
+}
+

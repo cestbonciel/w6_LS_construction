@@ -2,13 +2,12 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<title>LS건설|김하늘</title>
-	<link rel="stylesheet" href="css/style_boot.css">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/jquery.bxslider.css"> 
 	<link rel="stylesheet" href="css/animate.min.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">	
 	<!-- <script src="main.js"></script> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 	<script src="js/jquery-3.3.1.min.js"></script>
 	<script src="js/jquery.bxslider.js"></script>
 	<script src="js/bootstrap.min.js"></script>
@@ -20,47 +19,12 @@
 		$("#header nav.navi-sct").hover(function(){
 				$(".sub").stop().slideDown();
 				// $(".bg-menu-open").stop().slideDown();
-				// $(".gnb_wrap").addClass("h_active");
-				$(".gnb_wrap").css({
-					"position":"relative",
-					"z-index":100,
-					"backgroundColor":"#fff"
-				});
-				$("nav ul.navbar-nav>li>a").css({"color": "#0d2746"});
-				$("ul.sub>li>a").css({"color": "#0d2746"});
-				$(".sch-icon").attr("src","images/common/h_sch-icon.png");
-				$("#header .navbar a.h_logo").css({
-					"background":"url(images/common/hover_logo_2.png)"
-				});
-				$(".sch-wrap .sch input[type='text']").css({
-					"border":"none",
-					"border-bottom": "1px solid #0d2746",
-					"color":"none",
-					"background":"none"
-				});
-				
+				$(".gnb_wrap").addClass("h_active")
 			},function(){
 				$(".sub").hide();
 				// $(".bg-menu-open").hide();
-				// $(".gnb_wrap").removeClass("h_active")
-				$(".gnb_wrap").css({
-					"background":"none"
-				});
-				$("nav ul.navbar-nav>li>a").css({"color": "#fff"});
-				$("ul.sub>li>a").css({"color": "#fff"});
-				$(".sch-icon").attr("src","images/common/sch-icon.png");
-				$("#header .navbar a.h_logo").css({
-					"background":"url(images/common/logo_1.png)"
-				});
-				$(".sch-wrap .sch input[type='text']").css({
-					"border":"none",
-					"border-bottom": "1px solid #fff",
-					"color":"none",
-					"background":"none"
-				});
-			
 			});
-	//slide
+
 		var mySlider = $('.topSlider').bxSlider({
 			auto:true,
 			controls:false,
@@ -115,19 +79,13 @@
 			console.log($menuPos);
 			if (scrollY > 0) {
 				$("#header").addClass("fixed fadeInDown animated");
-				$("#header").css({"z-index":"100"});
-				$(".sch-icon").attr("src","images/common/h_sch-icon.png");
-				$("nav ul.navbar-nav>li>a").css({"color": "#0d2746"});
-				$("ul.sub>li>a").css({"color": "#0d2746"});
+				 $(".sch-icon").attr("src","images/common/h_sch-icon.png")
 			}else{
 				$("#header").removeClass("fixed fadeInDown animated");
-				$(".sch-icon").attr("src","images/common/sch-icon.png");
-				$("nav ul.navbar-nav>li>a").css({"color": "#fff"});
-				$("ul.sub>li>a").css({"color": "#fff"});
+				$(".sch-icon").attr("src","images/common/sch-icon.png")
 			}
 	}
-</script>
-</head>
+</script></head>
 
   
 <body>
@@ -192,124 +150,54 @@
 		<div class="gnb_wrap">
 			<header id="header" class="">
 				<div class="container">
-					<nav class="navi-sct navbar navbar-expand-md bg-transparent">
+					<nav class="navi-sct navbar navbar-expand-sm bg-transparent">
 					  <div class="container">
 					  	<a class="h_logo" href="index.html"></a>
-					  <!-- 	<button class="navbar-toggler d-none d-sm-block ml-auto" type="button" data-toggle="collapse" data-target="#lsmenu">
+					  	<!-- <button class="navbar-toggler d-none d-sm-block" type="button" data-toggle="collapse" data-target="#tmenu">
 							<span class="navbar-toggler-icon"></span> 
-							<i class="fas fa-bars"></i> </button> -->
-
-					  		<div class="collapse navbar-collapse" id="lsmenu">
-					  			<ul class="ls-gnb-menu navbar-nav mr-auto ml-auto">
-					  			  <h2 class="blind">메인메뉴</h2>
-					  			  <li class="nav-item pr-5">
-					  			    <a class="nav-link" href="#">LS소개</a>
-					  			    <ul class="sub">
-					  			    	<li><a href="#">경영철학</a></li>
-					  			    	<li><a href="#">주요 경영진</a></li>
-					  			    	<li><a href="#">글로벌 네트워크</a></li>
-					  			    	<li><a href="#">사업분야</a></li>
-					  			    	<li><a href="#">LS 역사</a></li>
-					  			    	<li><a href="#">투자정보</a></li>
-					  			    </ul>
-					  			  </li>
-					  			  <li class="nav-item pr-5">
-					  			    <a class="nav-link" href="#">채용정보</a>
-					  			    <ul class="sub">
-					  			    	<li><a href="#">인재상</a></li>
-					  			    	<li><a href="#">인사제도</a></li>
-					  			    	<li><a href="#">채용안내</a></li>
-					  			    </ul>
-					  			  </li>
-					  			  <li class="nav-item pr-5">
-					  			    <a class="nav-link" href="#">홍보센터</a>
-					  			    <ul class="sub">
-					  			    	<li><a href="#">보도자료</a></li>
-					  			    	<li><a href="#">소셜미디어</a></li>
-					  			    	<li><a href="#">광고</a></li>
-					  			    	<li><a href="#">CI</a></li>
-					  			    </ul>
-					  			  </li>
-					  			  <li class="nav-item ">
-					  			    <a class="nav-link" href="#">사회공헌</a>
-					  			    <ul class="sub">
-					  			    	<li><a href="#">LS사회공헌</a></li>
-					  			    	<li><a href="#">대학생 해외봉사단</a></li>
-					  			    	<li><a href="#">드림사이언스클래스</a></li>
-					  			    	<li><a href="#">대학생 기자단</a></li>
-					  			    	<li><a href="#">드림오케스트라</a></li>
-					  			    	<li><a href="#">LS 드림카</a></li>
-					  			    </ul>
-					  			  </li>
-					  			</ul>
-					  		</div>
-					  	
-					  </div>
-						<div class="sch-wrap d-none d-lg-block">
-							<div class="sch">
-								<input type="text" name="search" id="search">
-								<input class="sch-icon" type="image" src="images/common/sch-icon.png" alt="검색아이콘">
-								
-							</div>
-						</div>
-					</nav>
-				</div>
-			</header>
-		</div>
-		<div class="scroll-gnb-wrap" style="display:none;">
-			<header id="scroll-header" class="">
-				<div class="container">
-					<nav class="scr_navi-sct navbar navbar-expand-md bg-transparent">
-					  <div class="container">
-					  	<a class="h_logo" href="index.html"></a>
-					  <!-- 	<button class="navbar-toggler d-none d-sm-block ml-auto" type="button" data-toggle="collapse" data-target="#lsmenu">
-							<span class="navbar-toggler-icon"></span> 
-							<i class="fas fa-bars"></i> </button> -->
-
-					  		<div class="collapse navbar-collapse" id="lsmenu">
-					  			<ul class="ls-gnb-menu navbar-nav mr-auto ml-auto">
-					  			  <h2 class="blind">메인메뉴</h2>
-					  			  <li class="nav-item pr-5">
-					  			    <a class="nav-link" href="#">LS소개</a>
-					  			    <ul class="sub">
-					  			    	<li><a href="#">경영철학</a></li>
-					  			    	<li><a href="#">주요 경영진</a></li>
-					  			    	<li><a href="#">글로벌 네트워크</a></li>
-					  			    	<li><a href="#">사업분야</a></li>
-					  			    	<li><a href="#">LS 역사</a></li>
-					  			    	<li><a href="#">투자정보</a></li>
-					  			    </ul>
-					  			  </li>
-					  			  <li class="nav-item pr-5">
-					  			    <a class="nav-link" href="#">채용정보</a>
-					  			    <ul class="sub">
-					  			    	<li><a href="#">인재상</a></li>
-					  			    	<li><a href="#">인사제도</a></li>
-					  			    	<li><a href="#">채용안내</a></li>
-					  			    </ul>
-					  			  </li>
-					  			  <li class="nav-item pr-5">
-					  			    <a class="nav-link" href="#">홍보센터</a>
-					  			    <ul class="sub">
-					  			    	<li><a href="#">보도자료</a></li>
-					  			    	<li><a href="#">소셜미디어</a></li>
-					  			    	<li><a href="#">광고</a></li>
-					  			    	<li><a href="#">CI</a></li>
-					  			    </ul>
-					  			  </li>
-					  			  <li class="nav-item ">
-					  			    <a class="nav-link" href="#">사회공헌</a>
-					  			    <ul class="sub">
-					  			    	<li><a href="#">LS사회공헌</a></li>
-					  			    	<li><a href="#">대학생 해외봉사단</a></li>
-					  			    	<li><a href="#">드림사이언스클래스</a></li>
-					  			    	<li><a href="#">대학생 기자단</a></li>
-					  			    	<li><a href="#">드림오케스트라</a></li>
-					  			    	<li><a href="#">LS 드림카</a></li>
-					  			    </ul>
-					  			  </li>
-					  			</ul>
-					  		</div>
+							<i class="fas fa-bars"></i> </button>-->
+					  		<ul class="ls-gnb-menu navbar-nav mr-auto ml-auto">
+					  		  <h2 class="blind">메인메뉴</h2>
+					  		  <li class="nav-item pr-5">
+					  		    <a class="nav-link" href="#">LS소개</a>
+					  		    <ul class="sub">
+					  		    	<li><a href="#">경영철학</a></li>
+					  		    	<li><a href="#">주요 경영진</a></li>
+					  		    	<li><a href="#">글로벌 네트워크</a></li>
+					  		    	<li><a href="#">사업분야</a></li>
+					  		    	<li><a href="#">LS 역사</a></li>
+					  		    	<li><a href="#">투자정보</a></li>
+					  		    </ul>
+					  		  </li>
+					  		  <li class="nav-item pr-5">
+					  		    <a class="nav-link" href="#">채용정보</a>
+					  		    <ul class="sub">
+					  		    	<li><a href="#">인재상</a></li>
+					  		    	<li><a href="#">인사제도</a></li>
+					  		    	<li><a href="#">채용안내</a></li>
+					  		    </ul>
+					  		  </li>
+					  		  <li class="nav-item pr-5">
+					  		    <a class="nav-link" href="#">홍보센터</a>
+					  		    <ul class="sub">
+					  		    	<li><a href="#">보도자료</a></li>
+					  		    	<li><a href="#">소셜미디어</a></li>
+					  		    	<li><a href="#">광고</a></li>
+					  		    	<li><a href="#">CI</a></li>
+					  		    </ul>
+					  		  </li>
+					  		  <li class="nav-item ">
+					  		    <a class="nav-link" href="#">사회공헌</a>
+					  		    <ul class="sub">
+					  		    	<li><a href="#">LS사회공헌</a></li>
+					  		    	<li><a href="#">대학생 해외봉사단</a></li>
+					  		    	<li><a href="#">드림사이언스클래스</a></li>
+					  		    	<li><a href="#">대학생 기자단</a></li>
+					  		    	<li><a href="#">드림오케스트라</a></li>
+					  		    	<li><a href="#">LS 드림카</a></li>
+					  		    </ul>
+					  		  </li>
+					  		</ul>
 					  	
 					  </div>
 						<div class="sch-wrap d-none d-lg-block">
